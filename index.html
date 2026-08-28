@@ -1,306 +1,636 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Bill & Rebeca | Nuestra Boda</title>
+<title>Bill & Rebeca | Nuestra Boda</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      font-family: Georgia, serif;
-      background: #f8f6f0;
-      color: #3f463d;
-      text-align: center;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .portada {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-      background: linear-gradient(
-        rgba(248,246,240,0.88),
-        rgba(248,246,240,0.94)
-      ),
-      url("fotos/portada.jpg") center/cover;
-    }
+body{
+  font-family:Georgia, "Times New Roman", serif;
+  background:#f5f0e6;
+  color:#51453d;
+  line-height:1.7;
+}
 
-    .pequeno {
-      letter-spacing: 4px;
-      font-size: 14px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
+/* PORTADA */
 
-    h1 {
-      font-size: 58px;
-      font-weight: normal;
-      color: #5d6658;
-      margin-bottom: 15px;
-    }
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+  background:
+    linear-gradient(rgba(194,215,221,.72),rgba(245,240,230,.82)),
+    url("fotos/portada.jpg") center/cover no-repeat;
+}
 
-    .fecha {
-      font-size: 20px;
-      letter-spacing: 5px;
-      margin-bottom: 30px;
-    }
+.hero-content{
+  max-width:700px;
+  padding:45px 25px;
+}
 
-    .versiculo {
-      max-width: 500px;
-      font-size: 18px;
-      line-height: 1.7;
-      font-style: italic;
-    }
+.small-title{
+  letter-spacing:6px;
+  font-size:13px;
+  text-transform:uppercase;
+  color:#66564b;
+  margin-bottom:22px;
+}
 
-    section {
-      padding: 70px 25px;
-      max-width: 900px;
-      margin: auto;
-    }
+h1{
+  font-size:68px;
+  font-weight:normal;
+  letter-spacing:3px;
+  color:#51453d;
+  margin-bottom:12px;
+}
 
-    h2 {
-      font-size: 34px;
-      font-weight: normal;
-      color: #5d6658;
-      margin-bottom: 25px;
-    }
+.date{
+  font-size:19px;
+  letter-spacing:7px;
+  margin-bottom:30px;
+}
 
-    p {
-      font-size: 17px;
-      line-height: 1.8;
-    }
+.hero-verse{
+  font-size:17px;
+  font-style:italic;
+  max-width:520px;
+  margin:auto;
+}
 
-    .evento {
-      margin: 35px auto;
-      padding: 30px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
+.scroll{
+  margin-top:45px;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
 
-    .evento h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-      color: #5d6658;
-    }
+/* SECCIONES */
 
-    .boton {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      border-radius: 30px;
-      background: #697563;
-      color: white;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
+section{
+  padding:90px 25px;
+  max-width:1000px;
+  margin:auto;
+}
 
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 30px;
-    }
+.section-title{
+  text-align:center;
+  font-size:38px;
+  font-weight:normal;
+  color:#5b7180;
+  margin-bottom:18px;
+}
 
-    .galeria img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.subtitle{
+  text-align:center;
+  max-width:650px;
+  margin:0 auto 45px;
+  color:#75665c;
+}
 
-    .confirmacion {
-      background: #e8e7df;
-      border-radius: 15px;
-      padding: 45px 25px;
-    }
+/* HISTORIA */
 
-    footer {
-      padding: 50px 20px;
-      background: #5d6658;
-      color: white;
-    }
+.story{
+  text-align:center;
+}
 
-    footer h2 {
-      color: white;
-    }
+.story p{
+  max-width:680px;
+  margin:auto;
+  font-size:18px;
+}
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 45px;
-      }
+/* CONTADOR */
 
-      .galeria {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+.countdown-section{
+  background:#d8e5e7;
+  max-width:none;
+  text-align:center;
+}
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:35px;
+}
+
+.time-box{
+  background:#f8f4eb;
+  min-width:90px;
+  padding:18px 12px;
+  border-radius:12px;
+}
+
+.time-box span{
+  display:block;
+  font-size:31px;
+  color:#5b7180;
+}
+
+.time-box small{
+  font-family:Arial,sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* EVENTOS */
+
+.event{
+  background:#fbf8f1;
+  padding:45px 25px;
+  margin:25px auto;
+  max-width:650px;
+  text-align:center;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(80,70,60,.08);
+}
+
+.event-icon{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.event h3{
+  font-size:27px;
+  font-weight:normal;
+  color:#5b7180;
+  margin-bottom:15px;
+}
+
+.event p{
+  margin-bottom:15px;
+}
+
+.map-button,
+.whatsapp-button{
+  display:inline-block;
+  padding:13px 28px;
+  border-radius:30px;
+  background:#6d8792;
+  color:white;
+  text-decoration:none;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  letter-spacing:1px;
+  margin-top:10px;
+}
+
+/* VESTIMENTA */
+
+.dress{
+  background:#eee8dc;
+  max-width:none;
+  text-align:center;
+}
+
+.dress-box{
+  max-width:700px;
+  margin:auto;
+  background:#f9f5ed;
+  padding:40px 25px;
+  border-radius:15px;
+}
+
+.dress-title{
+  font-size:27px;
+  color:#5b7180;
+  margin-bottom:20px;
+}
+
+.dress p{
+  margin-bottom:15px;
+}
+
+/* GALERIA */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:35px;
+}
+
+.gallery img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* CONFIRMACION */
+
+.confirm{
+  background:#d8e5e7;
+  max-width:none;
+  text-align:center;
+}
+
+.confirm-box{
+  max-width:650px;
+  margin:auto;
+}
+
+.confirm-box p{
+  margin-bottom:15px;
+}
+
+.whatsapp-button{
+  background:#6d8792;
+}
+
+/* FINAL */
+
+footer{
+  background:#51453d;
+  color:#f5f0e6;
+  text-align:center;
+  padding:75px 20px;
+}
+
+footer h2{
+  font-size:38px;
+  font-weight:normal;
+  margin-bottom:10px;
+}
+
+footer p{
+  letter-spacing:3px;
+}
+
+/* CELULAR */
+
+@media(max-width:600px){
+
+  h1{
+    font-size:48px;
+  }
+
+  .date{
+    font-size:16px;
+    letter-spacing:5px;
+  }
+
+  section{
+    padding:70px 20px;
+  }
+
+  .section-title{
+    font-size:32px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img{
+    height:280px;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
-  <!-- PORTADA -->
+<!-- PORTADA -->
 
-  <div class="portada">
+<header class="hero">
 
-    <div class="pequeno">
-      Nos casamos
+  <div class="hero-content">
+
+    <div class="small-title">
+      Nuestra boda
     </div>
 
     <h1>Bill & Rebeca</h1>
 
-    <div class="fecha">
+    <div class="date">
       21 · 09 · 2026
     </div>
 
-    <div class="versiculo">
+    <div class="hero-verse">
       “Lo que Dios ha unido, no lo separe el hombre.”
       <br>
       Mateo 19:6
     </div>
 
+    <div class="scroll">
+      Desliza para comenzar
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- HISTORIA -->
+
+<section class="story">
+
+  <h2 class="section-title">
+    Nuestra historia
+  </h2>
+
+  <p class="subtitle">
+    Un amor que queremos celebrar delante de Dios
+    y compartir con las personas que amamos.
+  </p>
+
+  <p>
+    Con mucha alegría queremos invitarte a ser parte
+    de uno de los días más importantes de nuestras vidas.
+    Hoy comenzamos una nueva etapa juntos, confiando
+    en el propósito de Dios para nuestra familia.
+  </p>
+
+</section>
+
+
+<!-- CUENTA REGRESIVA -->
+
+<section class="countdown-section">
+
+  <h2 class="section-title">
+    Falta muy poco
+  </h2>
+
+  <p>
+    Para celebrar nuestro gran día
+  </p>
+
+  <div class="countdown">
+
+    <div class="time-box">
+      <span id="days">0</span>
+      <small>Días</small>
+    </div>
+
+    <div class="time-box">
+      <span id="hours">0</span>
+      <small>Horas</small>
+    </div>
+
+    <div class="time-box">
+      <span id="minutes">0</span>
+      <small>Minutos</small>
+    </div>
+
+    <div class="time-box">
+      <span id="seconds">0</span>
+      <small>Segundos</small>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CEREMONIA -->
+
+<section>
+
+  <h2 class="section-title">
+    Nuestro gran día
+  </h2>
+
+  <p class="subtitle">
+    Queremos compartir contigo este momento tan especial.
+  </p>
+
+  <div class="event">
+
+    <div class="event-icon">✝️</div>
+
+    <h3>
+      Ceremonia religiosa
+    </h3>
+
+    <p>
+      <strong>21 de septiembre de 2026</strong>
+      <br>
+      4:00 p. m.
+      <br><br>
+      Jirón Coronel Zubiaga 187
+      <br>
+      Cercado de Lima
+    </p>
+
+    <a
+      class="map-button"
+      href="https://www.google.com/maps/search/?api=1&query=Jir%C3%B3n+Coronel+Zubiaga+187+Cercado+de+Lima"
+      target="_blank">
+      VER UBICACIÓN
+    </a>
+
   </div>
 
 
-  <!-- NUESTRA HISTORIA -->
+  <div class="event">
 
-  <section>
+    <div class="event-icon">🥂</div>
 
-    <h2>Nuestra historia</h2>
-
-    <p>
-      Con mucha alegría queremos compartir contigo
-      uno de los días más importantes de nuestras vidas.
-      Dios nos permitió encontrarnos y hoy comenzamos
-      una nueva etapa juntos.
-    </p>
-
-  </section>
-
-
-  <!-- EVENTOS -->
-
-  <section>
-
-    <h2>Nuestro gran día</h2>
-
-    <div class="evento">
-
-      <h3>💍 Boda Civil</h3>
-
-      <p>
-        21 de septiembre de 2026
-        <br>
-        Hora por confirmar
-        <br>
-        Lugar por confirmar
-      </p>
-
-    </div>
-
-
-    <div class="evento">
-
-      <h3>✝️ Ceremonia Religiosa</h3>
-
-      <p>
-        21 de septiembre de 2026
-        <br>
-        Hora por confirmar
-        <br>
-        Lugar por confirmar
-      </p>
-
-    </div>
-
-
-    <div class="evento">
-
-      <h3>🥂 Recepción</h3>
-
-      <p>
-        Después de la ceremonia
-        <br>
-        Lugar por confirmar
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- GALERÍA -->
-
-  <section>
-
-    <h2>Nuestros momentos</h2>
+    <h3>
+      Recepción
+    </h3>
 
     <p>
-      Algunas fotografías de nuestra historia.
+      Al finalizar la ceremonia
+      <br><br>
+      <strong>En el mismo lugar</strong>
+      <br>
+      Jirón Coronel Zubiaga 187
+      <br>
+      Cercado de Lima
     </p>
 
-    <div class="galeria">
+  </div>
 
-      <img src="fotos/foto1.jpg" alt="Bill y Rebeca">
-      <img src="fotos/foto2.jpg" alt="Bill y Rebeca">
-      <img src="fotos/foto3.jpg" alt="Bill y Rebeca">
-      <img src="fotos/foto4.jpg" alt="Bill y Rebeca">
+</section>
 
+
+<!-- VESTIMENTA -->
+
+<section class="dress">
+
+  <div class="dress-box">
+
+    <h2 class="section-title">
+      Código de vestimenta
+    </h2>
+
+    <div class="dress-title">
+      Formal
     </div>
 
-  </section>
-
-
-  <!-- CONFIRMACIÓN -->
-
-  <section>
-
-    <div class="confirmacion">
-
-      <h2>¿Nos acompañas?</h2>
-
-      <p>
-        Nos encantaría contar contigo
-        en este día tan especial.
-      </p>
-
-      <a class="boton"
-         href="https://wa.me/51999999999">
-        CONFIRMAR ASISTENCIA
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- CIERRE -->
-
-  <footer>
-
-    <h2>Con amor,</h2>
-
     <p>
-      Bill & Rebeca
+      Queremos que todos luzcan elegantes
+      para celebrar juntos este día tan especial.
     </p>
 
-    <br>
-
     <p>
-      21 · 09 · 2026
+      <strong>Caballeros:</strong>
+      traje o vestimenta formal.
     </p>
 
-  </footer>
+    <p>
+      <strong>Damas:</strong>
+      vestido elegante.
+    </p>
+
+    <p>
+      Agradecemos evitar zapatillas deportivas
+      o de colores llamativos, así como vestidos
+      en tonos neón o excesivamente vibrantes.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- GALERIA -->
+
+<section>
+
+  <h2 class="section-title">
+    Nuestros momentos
+  </h2>
+
+  <p class="subtitle">
+    Algunas fotografías de nuestra historia.
+  </p>
+
+  <div class="gallery">
+
+    <img src="fotos/foto1.jpg" alt="Bill y Rebeca">
+    <img src="fotos/foto2.jpg" alt="Bill y Rebeca">
+    <img src="fotos/foto3.jpg" alt="Bill y Rebeca">
+    <img src="fotos/foto4.jpg" alt="Bill y Rebeca">
+
+  </div>
+
+</section>
+
+
+<!-- CONFIRMACION -->
+
+<section class="confirm">
+
+  <div class="confirm-box">
+
+    <h2 class="section-title">
+      ¿Nos acompañas?
+    </h2>
+
+    <p>
+      Para nosotros será muy especial
+      contar con tu presencia.
+    </p>
+
+    <p>
+      Por favor confirma tu asistencia
+      con anticipación.
+    </p>
+
+    <a
+      class="whatsapp-button"
+      href="https://wa.me/51921788307?text=Hola%20Bill%20y%20Rebeca%2C%20quiero%20confirmar%20mi%20asistencia%20a%20su%20boda."
+      target="_blank">
+      CONFIRMAR ASISTENCIA
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<footer>
+
+  <h2>
+    Bill & Rebeca
+  </h2>
+
+  <p>
+    21 · 09 · 2026
+  </p>
+
+  <br>
+
+  <p>
+    Con amor y gratitud ❤️
+  </p>
+
+</footer>
+
+
+<!-- CUENTA REGRESIVA -->
+
+<script>
+
+const weddingDate =
+new Date("September 21, 2026 16:00:00").getTime();
+
+function updateCountdown(){
+
+  const now = new Date().getTime();
+
+  const distance = weddingDate - now;
+
+  if(distance <= 0){
+
+    document.getElementById("days").innerText = "0";
+    document.getElementById("hours").innerText = "0";
+    document.getElementById("minutes").innerText = "0";
+    document.getElementById("seconds").innerText = "0";
+
+    return;
+  }
+
+  const days =
+  Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours =
+  Math.floor((distance % (1000 * 60 * 60 * 24))
+  / (1000 * 60 * 60));
+
+  const minutes =
+  Math.floor((distance % (1000 * 60 * 60))
+  / (1000 * 60));
+
+  const seconds =
+  Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
 
 </body>
 </html>
