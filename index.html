@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bill & Rebeca | Nuestra Boda</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #f8f6f0;
+      color: #3f463d;
+      text-align: center;
+    }
+
+    .portada {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      background: linear-gradient(
+        rgba(248,246,240,0.88),
+        rgba(248,246,240,0.94)
+      ),
+      url("fotos/portada.jpg") center/cover;
+    }
+
+    .pequeno {
+      letter-spacing: 4px;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 58px;
+      font-weight: normal;
+      color: #5d6658;
+      margin-bottom: 15px;
+    }
+
+    .fecha {
+      font-size: 20px;
+      letter-spacing: 5px;
+      margin-bottom: 30px;
+    }
+
+    .versiculo {
+      max-width: 500px;
+      font-size: 18px;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    section {
+      padding: 70px 25px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 34px;
+      font-weight: normal;
+      color: #5d6658;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .evento {
+      margin: 35px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .evento h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #5d6658;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      border-radius: 30px;
+      background: #697563;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .confirmacion {
+      background: #e8e7df;
+      border-radius: 15px;
+      padding: 45px 25px;
+    }
+
+    footer {
+      padding: 50px 20px;
+      background: #5d6658;
+      color: white;
+    }
+
+    footer h2 {
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 45px;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PORTADA -->
+
+  <div class="portada">
+
+    <div class="pequeno">
+      Nos casamos
+    </div>
+
+    <h1>Bill & Rebeca</h1>
+
+    <div class="fecha">
+      21 · 09 · 2026
+    </div>
+
+    <div class="versiculo">
+      “Lo que Dios ha unido, no lo separe el hombre.”
+      <br>
+      Mateo 19:6
+    </div>
+
+  </div>
+
+
+  <!-- NUESTRA HISTORIA -->
+
+  <section>
+
+    <h2>Nuestra historia</h2>
+
+    <p>
+      Con mucha alegría queremos compartir contigo
+      uno de los días más importantes de nuestras vidas.
+      Dios nos permitió encontrarnos y hoy comenzamos
+      una nueva etapa juntos.
+    </p>
+
+  </section>
+
+
+  <!-- EVENTOS -->
+
+  <section>
+
+    <h2>Nuestro gran día</h2>
+
+    <div class="evento">
+
+      <h3>💍 Boda Civil</h3>
+
+      <p>
+        21 de septiembre de 2026
+        <br>
+        Hora por confirmar
+        <br>
+        Lugar por confirmar
+      </p>
+
+    </div>
+
+
+    <div class="evento">
+
+      <h3>✝️ Ceremonia Religiosa</h3>
+
+      <p>
+        21 de septiembre de 2026
+        <br>
+        Hora por confirmar
+        <br>
+        Lugar por confirmar
+      </p>
+
+    </div>
+
+
+    <div class="evento">
+
+      <h3>🥂 Recepción</h3>
+
+      <p>
+        Después de la ceremonia
+        <br>
+        Lugar por confirmar
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALERÍA -->
+
+  <section>
+
+    <h2>Nuestros momentos</h2>
+
+    <p>
+      Algunas fotografías de nuestra historia.
+    </p>
+
+    <div class="galeria">
+
+      <img src="fotos/foto1.jpg" alt="Bill y Rebeca">
+      <img src="fotos/foto2.jpg" alt="Bill y Rebeca">
+      <img src="fotos/foto3.jpg" alt="Bill y Rebeca">
+      <img src="fotos/foto4.jpg" alt="Bill y Rebeca">
+
+    </div>
+
+  </section>
+
+
+  <!-- CONFIRMACIÓN -->
+
+  <section>
+
+    <div class="confirmacion">
+
+      <h2>¿Nos acompañas?</h2>
+
+      <p>
+        Nos encantaría contar contigo
+        en este día tan especial.
+      </p>
+
+      <a class="boton"
+         href="https://wa.me/51999999999">
+        CONFIRMAR ASISTENCIA
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CIERRE -->
+
+  <footer>
+
+    <h2>Con amor,</h2>
+
+    <p>
+      Bill & Rebeca
+    </p>
+
+    <br>
+
+    <p>
+      21 · 09 · 2026
+    </p>
+
+  </footer>
+
+</body>
+</html>
