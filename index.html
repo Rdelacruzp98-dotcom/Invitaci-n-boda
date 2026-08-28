@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bill & Rebeca | Nuestra Boda</title>
+<title>Bill & Rebeca | 21.09.2026</title>
 
 <style>
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
@@ -18,10 +18,99 @@ html{
 }
 
 body{
-  font-family:Georgia, "Times New Roman", serif;
-  background:#f5f0e6;
-  color:#51453d;
-  line-height:1.7;
+  background:#f7f1e7;
+  color:#594d45;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+
+:root{
+  --blue:#a9c3cc;
+  --blue-dark:#637f8b;
+  --cream:#f7f1e7;
+  --cream-dark:#e9dfd0;
+  --brown:#594d45;
+  --brown-light:#806f63;
+}
+
+/* FLORES DECORATIVAS */
+
+.flower{
+  position:absolute;
+  font-size:45px;
+  opacity:.35;
+  color:var(--blue-dark);
+  pointer-events:none;
+}
+
+.flower.one{
+  top:35px;
+  left:25px;
+  transform:rotate(-25deg);
+}
+
+.flower.two{
+  bottom:30px;
+  right:25px;
+  transform:rotate(30deg);
+}
+
+/* SOBRE */
+
+.envelope{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:var(--cream);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  transition:opacity 1s ease, visibility 1s ease;
+}
+
+.envelope.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.envelope-box{
+  width:90%;
+  max-width:500px;
+  padding:60px 30px;
+  border:1px solid rgba(89,77,69,.25);
+  position:relative;
+}
+
+.envelope-small{
+  letter-spacing:5px;
+  font-size:11px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+.envelope h1{
+  font-size:52px;
+  font-weight:normal;
+  color:var(--brown);
+  margin-bottom:20px;
+}
+
+.envelope p{
+  font-size:17px;
+  font-style:italic;
+  margin-bottom:35px;
+}
+
+.open-button{
+  border:none;
+  background:var(--blue-dark);
+  color:white;
+  padding:15px 35px;
+  border-radius:40px;
+  letter-spacing:2px;
+  font-size:11px;
+  cursor:pointer;
 }
 
 /* PORTADA */
@@ -33,37 +122,40 @@ body{
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:30px;
   background:
-    linear-gradient(rgba(194,215,221,.72),rgba(245,240,230,.82)),
+    linear-gradient(rgba(169,195,204,.55),rgba(247,241,231,.72)),
     url("fotos/portada.jpg") center/cover no-repeat;
 }
 
-.hero-content{
-  max-width:700px;
-  padding:45px 25px;
+.hero-inner{
+  padding:40px 25px;
 }
 
-.small-title{
-  letter-spacing:6px;
-  font-size:13px;
-  text-transform:uppercase;
-  color:#66564b;
-  margin-bottom:22px;
-}
-
-h1{
-  font-size:68px;
-  font-weight:normal;
-  letter-spacing:3px;
-  color:#51453d;
-  margin-bottom:12px;
-}
-
-.date{
-  font-size:19px;
+.hero-small{
   letter-spacing:7px;
+  text-transform:uppercase;
+  font-size:12px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:72px;
+  font-weight:normal;
+  letter-spacing:4px;
+  margin-bottom:15px;
+}
+
+.hero-date{
+  font-size:18px;
+  letter-spacing:8px;
   margin-bottom:30px;
+}
+
+.hero-line{
+  width:70px;
+  height:1px;
+  background:var(--brown);
+  margin:25px auto;
 }
 
 .hero-verse{
@@ -73,9 +165,12 @@ h1{
   margin:auto;
 }
 
-.scroll{
-  margin-top:45px;
-  font-size:12px;
+.discover{
+  display:inline-block;
+  margin-top:55px;
+  color:var(--brown);
+  text-decoration:none;
+  font-size:11px;
   letter-spacing:3px;
   text-transform:uppercase;
 }
@@ -83,42 +178,85 @@ h1{
 /* SECCIONES */
 
 section{
-  padding:90px 25px;
-  max-width:1000px;
+  max-width:950px;
   margin:auto;
+  padding:95px 25px;
+  position:relative;
+}
+
+.section-label{
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  color:var(--blue-dark);
+  margin-bottom:15px;
 }
 
 .section-title{
   text-align:center;
-  font-size:38px;
+  font-size:40px;
   font-weight:normal;
-  color:#5b7180;
-  margin-bottom:18px;
+  color:var(--brown);
+  margin-bottom:25px;
 }
 
-.subtitle{
+.section-text{
   text-align:center;
-  max-width:650px;
-  margin:0 auto 45px;
-  color:#75665c;
-}
-
-/* HISTORIA */
-
-.story{
-  text-align:center;
-}
-
-.story p{
   max-width:680px;
   margin:auto;
   font-size:18px;
+  line-height:1.9;
+}
+
+/* FRASE */
+
+.quote{
+  background:var(--blue);
+  max-width:none;
+  text-align:center;
+  padding:90px 30px;
+}
+
+.quote p{
+  max-width:650px;
+  margin:auto;
+  font-size:27px;
+  font-style:italic;
+  line-height:1.6;
+}
+
+.quote small{
+  display:block;
+  margin-top:25px;
+  letter-spacing:3px;
+}
+
+/* FOTOS */
+
+.photo-large{
+  margin:50px auto;
+  max-width:700px;
+}
+
+.photo-large img{
+  width:100%;
+  max-height:650px;
+  object-fit:cover;
+  border-radius:3px;
+}
+
+.photo-caption{
+  text-align:center;
+  margin-top:15px;
+  font-style:italic;
+  color:var(--brown-light);
 }
 
 /* CONTADOR */
 
 .countdown-section{
-  background:#d8e5e7;
+  background:var(--cream-dark);
   max-width:none;
   text-align:center;
 }
@@ -126,165 +264,244 @@ section{
 .countdown{
   display:flex;
   justify-content:center;
-  gap:18px;
+  gap:15px;
   flex-wrap:wrap;
-  margin-top:35px;
+  margin-top:40px;
 }
 
-.time-box{
-  background:#f8f4eb;
+.time{
   min-width:90px;
-  padding:18px 12px;
-  border-radius:12px;
+  padding:20px 12px;
+  background:var(--cream);
 }
 
-.time-box span{
+.time span{
   display:block;
-  font-size:31px;
-  color:#5b7180;
+  font-size:34px;
+  color:var(--blue-dark);
 }
 
-.time-box small{
+.time small{
   font-family:Arial,sans-serif;
-  font-size:10px;
-  letter-spacing:2px;
   text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:9px;
 }
 
 /* EVENTOS */
 
+.events{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  margin-top:45px;
+}
+
 .event{
-  background:#fbf8f1;
+  background:#fbf8f2;
   padding:45px 25px;
-  margin:25px auto;
-  max-width:650px;
   text-align:center;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(80,70,60,.08);
+  border:1px solid rgba(89,77,69,.12);
 }
 
 .event-icon{
   font-size:30px;
-  margin-bottom:10px;
+  margin-bottom:15px;
 }
 
 .event h3{
-  font-size:27px;
+  color:var(--blue-dark);
+  font-size:26px;
   font-weight:normal;
-  color:#5b7180;
   margin-bottom:15px;
 }
 
 .event p{
-  margin-bottom:15px;
+  line-height:1.8;
 }
 
-.map-button,
-.whatsapp-button{
+.map{
   display:inline-block;
-  padding:13px 28px;
+  margin-top:20px;
+  padding:12px 25px;
   border-radius:30px;
-  background:#6d8792;
+  background:var(--blue-dark);
   color:white;
   text-decoration:none;
   font-family:Arial,sans-serif;
-  font-size:12px;
-  letter-spacing:1px;
-  margin-top:10px;
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+/* LINEA DEL TIEMPO */
+
+.timeline{
+  max-width:600px;
+  margin:50px auto 0;
+}
+
+.timeline-item{
+  display:flex;
+  align-items:center;
+  gap:25px;
+  padding:25px 0;
+  border-bottom:1px solid rgba(89,77,69,.15);
+}
+
+.timeline-time{
+  min-width:90px;
+  color:var(--blue-dark);
+  font-size:18px;
+}
+
+.timeline-text{
+  text-align:left;
+}
+
+.timeline-text strong{
+  display:block;
+  font-size:19px;
 }
 
 /* VESTIMENTA */
 
 .dress{
-  background:#eee8dc;
   max-width:none;
+  background:#dbe6e8;
   text-align:center;
 }
 
 .dress-box{
-  max-width:700px;
+  max-width:750px;
   margin:auto;
-  background:#f9f5ed;
-  padding:40px 25px;
-  border-radius:15px;
+  background:rgba(247,241,231,.75);
+  padding:50px 30px;
 }
 
-.dress-title{
-  font-size:27px;
-  color:#5b7180;
-  margin-bottom:20px;
+.dress-main{
+  font-size:32px;
+  color:var(--blue-dark);
+  margin-bottom:25px;
 }
 
-.dress p{
-  margin-bottom:15px;
+.dress-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  margin:30px 0;
+}
+
+.dress-card{
+  padding:25px;
+  background:var(--cream);
+}
+
+.dress-card h3{
+  font-weight:normal;
+  color:var(--brown);
+  margin-bottom:10px;
+}
+
+.avoid{
+  margin-top:30px;
+  padding-top:25px;
+  border-top:1px solid rgba(89,77,69,.15);
 }
 
 /* GALERIA */
 
 .gallery{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:2fr 1fr;
   gap:15px;
-  margin-top:35px;
+  margin-top:45px;
 }
 
 .gallery img{
   width:100%;
-  height:300px;
+  height:270px;
   object-fit:cover;
-  border-radius:12px;
+}
+
+.gallery img:first-child{
+  height:555px;
+  grid-row:span 2;
+}
+
+/* MUSICA */
+
+.music{
+  text-align:center;
+  background:var(--cream-dark);
+  max-width:none;
+}
+
+.music-button{
+  margin-top:25px;
+  border:none;
+  padding:14px 30px;
+  border-radius:30px;
+  background:var(--blue-dark);
+  color:white;
+  cursor:pointer;
+  letter-spacing:2px;
 }
 
 /* CONFIRMACION */
 
 .confirm{
-  background:#d8e5e7;
   max-width:none;
+  background:var(--blue);
   text-align:center;
 }
 
-.confirm-box{
-  max-width:650px;
+.confirm-text{
+  max-width:600px;
   margin:auto;
+  font-size:18px;
 }
 
-.confirm-box p{
-  margin-bottom:15px;
-}
-
-.whatsapp-button{
-  background:#6d8792;
+.whatsapp{
+  display:inline-block;
+  margin-top:30px;
+  background:var(--brown);
+  color:white;
+  padding:16px 35px;
+  border-radius:35px;
+  text-decoration:none;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:2px;
 }
 
 /* FINAL */
 
 footer{
-  background:#51453d;
-  color:#f5f0e6;
+  background:var(--brown);
+  color:var(--cream);
   text-align:center;
-  padding:75px 20px;
+  padding:90px 20px;
 }
 
 footer h2{
-  font-size:38px;
+  font-size:48px;
   font-weight:normal;
-  margin-bottom:10px;
+  margin-bottom:15px;
 }
 
 footer p{
-  letter-spacing:3px;
+  letter-spacing:4px;
 }
 
 /* CELULAR */
 
-@media(max-width:600px){
+@media(max-width:700px){
 
-  h1{
+  .hero h1{
     font-size:48px;
   }
 
-  .date{
-    font-size:16px;
+  .hero-date{
     letter-spacing:5px;
   }
 
@@ -296,45 +513,97 @@ footer p{
     font-size:32px;
   }
 
+  .quote p{
+    font-size:23px;
+  }
+
+  .events{
+    grid-template-columns:1fr;
+  }
+
+  .dress-columns{
+    grid-template-columns:1fr;
+  }
+
   .gallery{
     grid-template-columns:1fr;
   }
 
-  .gallery img{
-    height:280px;
+  .gallery img,
+  .gallery img:first-child{
+    height:320px;
+    grid-row:auto;
   }
 
+  .envelope h1{
+    font-size:43px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- PORTADA -->
+<!-- SOBRE DE BIENVENIDA -->
 
-<header class="hero">
+<div class="envelope" id="envelope">
 
-  <div class="hero-content">
+  <div class="envelope-box">
 
-    <div class="small-title">
-      Nuestra boda
+    <div class="flower one">❦</div>
+
+    <div class="envelope-small">
+      Una invitación especial
     </div>
 
     <h1>Bill & Rebeca</h1>
 
-    <div class="date">
+    <p>
+      Tenemos el honor de invitarte
+      a celebrar nuestro gran día.
+    </p>
+
+    <button class="open-button" onclick="openInvitation()">
+      ABRIR INVITACIÓN
+    </button>
+
+    <div class="flower two">❦</div>
+
+  </div>
+
+</div>
+
+
+<!-- PORTADA -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="hero-small">
+      Nuestra boda
+    </div>
+
+    <h1>
+      Bill & Rebeca
+    </h1>
+
+    <div class="hero-date">
       21 · 09 · 2026
     </div>
 
+    <div class="hero-line"></div>
+
     <div class="hero-verse">
-      “Lo que Dios ha unido, no lo separe el hombre.”
+      “Lo que Dios ha unido,
+      no lo separe el hombre.”
       <br>
       Mateo 19:6
     </div>
 
-    <div class="scroll">
-      Desliza para comenzar
-    </div>
+    <a href="#historia" class="discover">
+      Descubre nuestra historia ↓
+    </a>
 
   </div>
 
@@ -343,57 +612,120 @@ footer p{
 
 <!-- HISTORIA -->
 
-<section class="story">
+<section id="historia">
+
+  <div class="section-label">
+    Nuestra historia
+  </div>
 
   <h2 class="section-title">
-    Nuestra historia
+    Un amor escrito por Dios
   </h2>
 
-  <p class="subtitle">
-    Un amor que queremos celebrar delante de Dios
-    y compartir con las personas que amamos.
+  <p class="section-text">
+    Con mucha alegría queremos compartir contigo
+    uno de los días más importantes de nuestras vidas.
+    Dios nos permitió encontrarnos y hoy damos un nuevo
+    paso juntos, poniendo nuestra historia en Sus manos.
   </p>
 
+  <div class="photo-large">
+
+    <img
+      src="fotos/foto1.jpg"
+      alt="Bill y Rebeca">
+
+    <div class="photo-caption">
+      Nuestra historia comienza aquí...
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FRASE -->
+
+<section class="quote">
+
   <p>
-    Con mucha alegría queremos invitarte a ser parte
-    de uno de los días más importantes de nuestras vidas.
-    Hoy comenzamos una nueva etapa juntos, confiando
-    en el propósito de Dios para nuestra familia.
+    “Dos historias, un camino,
+    una promesa y Dios en el centro de todo.”
+  </p>
+
+  <small>
+    BILL & REBECA
+  </small>
+
+</section>
+
+
+<!-- DIOS EN NUESTRA HISTORIA -->
+
+<section>
+
+  <div class="section-label">
+    Nuestra fe
+  </div>
+
+  <h2 class="section-title">
+    Dios en nuestra historia
+  </h2>
+
+  <p class="section-text">
+
+    “Cordón de tres dobleces no se rompe pronto.”
+
+    <br><br>
+
+    <strong>Eclesiastés 4:12</strong>
+
+    <br><br>
+
+    Queremos comenzar esta nueva etapa
+    con Dios como fundamento de nuestro hogar,
+    confiando en Su amor, Su dirección
+    y Su propósito para nuestras vidas.
+
   </p>
 
 </section>
 
 
-<!-- CUENTA REGRESIVA -->
+<!-- CONTADOR -->
 
 <section class="countdown-section">
+
+  <div class="section-label">
+    Nuestro gran día
+  </div>
 
   <h2 class="section-title">
     Falta muy poco
   </h2>
 
   <p>
-    Para celebrar nuestro gran día
+    para celebrar juntos este momento.
   </p>
 
   <div class="countdown">
 
-    <div class="time-box">
+    <div class="time">
       <span id="days">0</span>
       <small>Días</small>
     </div>
 
-    <div class="time-box">
+    <div class="time">
       <span id="hours">0</span>
       <small>Horas</small>
     </div>
 
-    <div class="time-box">
+    <div class="time">
       <span id="minutes">0</span>
       <small>Minutos</small>
     </div>
 
-    <div class="time-box">
+    <div class="time">
       <span id="seconds">0</span>
       <small>Segundos</small>
     </div>
@@ -403,63 +735,164 @@ footer p{
 </section>
 
 
-<!-- CEREMONIA -->
+<!-- EVENTOS -->
 
 <section>
+
+  <div class="section-label">
+    21 · 09 · 2026
+  </div>
 
   <h2 class="section-title">
     Nuestro gran día
   </h2>
 
-  <p class="subtitle">
-    Queremos compartir contigo este momento tan especial.
+  <p class="section-text">
+    Queremos que seas parte de esta celebración
+    tan especial para nosotros.
   </p>
 
-  <div class="event">
+  <div class="events">
 
-    <div class="event-icon">✝️</div>
+    <div class="event">
 
-    <h3>
-      Ceremonia religiosa
-    </h3>
+      <div class="event-icon">
+        ✝️
+      </div>
 
-    <p>
-      <strong>21 de septiembre de 2026</strong>
-      <br>
-      4:00 p. m.
-      <br><br>
-      Jirón Coronel Zubiaga 187
-      <br>
-      Cercado de Lima
-    </p>
+      <h3>
+        Ceremonia religiosa
+      </h3>
 
-    <a
-      class="map-button"
-      href="https://www.google.com/maps/search/?api=1&query=Jir%C3%B3n+Coronel+Zubiaga+187+Cercado+de+Lima"
-      target="_blank">
-      VER UBICACIÓN
-    </a>
+      <p>
+
+        <strong>4:00 p. m.</strong>
+
+        <br><br>
+
+        Jirón Coronel Zubiaga 187
+        <br>
+        Cercado de Lima
+
+      </p>
+
+      <a
+        class="map"
+        href="https://www.google.com/maps/search/?api=1&query=Jir%C3%B3n+Coronel+Zubiaga+187+Cercado+de+Lima"
+        target="_blank">
+
+        VER UBICACIÓN
+
+      </a>
+
+    </div>
+
+
+    <div class="event">
+
+      <div class="event-icon">
+        🥂
+      </div>
+
+      <h3>
+        Recepción
+      </h3>
+
+      <p>
+
+        Después de la ceremonia
+
+        <br><br>
+
+        <strong>En el mismo lugar</strong>
+
+        <br><br>
+
+        Jirón Coronel Zubiaga 187
+        <br>
+        Cercado de Lima
+
+      </p>
+
+    </div>
 
   </div>
 
+</section>
 
-  <div class="event">
 
-    <div class="event-icon">🥂</div>
+<!-- CRONOGRAMA -->
 
-    <h3>
-      Recepción
-    </h3>
+<section>
 
-    <p>
-      Al finalizar la ceremonia
-      <br><br>
-      <strong>En el mismo lugar</strong>
-      <br>
-      Jirón Coronel Zubiaga 187
-      <br>
-      Cercado de Lima
-    </p>
+  <div class="section-label">
+    Celebremos juntos
+  </div>
+
+  <h2 class="section-title">
+    Así será nuestro día
+  </h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        4:00 p. m.
+      </div>
+
+      <div class="timeline-text">
+
+        <strong>
+          Ceremonia religiosa
+        </strong>
+
+        Un momento para celebrar
+        nuestra unión delante de Dios.
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        Después
+      </div>
+
+      <div class="timeline-text">
+
+        <strong>
+          Recepción
+        </strong>
+
+        Compartiremos juntos
+        comida, alegría y buenos momentos.
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+      <div class="timeline-time">
+        ❤️
+      </div>
+
+      <div class="timeline-text">
+
+        <strong>
+          Celebramos nuestro amor
+        </strong>
+
+        Queremos disfrutar este día
+        junto a las personas que amamos.
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -472,34 +905,61 @@ footer p{
 
   <div class="dress-box">
 
+    <div class="section-label">
+      Dress code
+    </div>
+
     <h2 class="section-title">
       Código de vestimenta
     </h2>
 
-    <div class="dress-title">
-      Formal
+    <div class="dress-main">
+      FORMAL
     </div>
 
-    <p>
-      Queremos que todos luzcan elegantes
-      para celebrar juntos este día tan especial.
-    </p>
+    <div class="dress-columns">
 
-    <p>
-      <strong>Caballeros:</strong>
-      traje o vestimenta formal.
-    </p>
+      <div class="dress-card">
 
-    <p>
-      <strong>Damas:</strong>
-      vestido elegante.
-    </p>
+        <h3>🤵 Caballeros</h3>
 
-    <p>
-      Agradecemos evitar zapatillas deportivas
-      o de colores llamativos, así como vestidos
-      en tonos neón o excesivamente vibrantes.
-    </p>
+        <p>
+          Traje o vestimenta formal
+          y zapatos de vestir.
+        </p>
+
+      </div>
+
+
+      <div class="dress-card">
+
+        <h3>👗 Damas</h3>
+
+        <p>
+          Vestido elegante
+          y acorde a la ocasión.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="avoid">
+
+      <strong>
+        Una pequeña consideración
+      </strong>
+
+      <p>
+        Para mantener la armonía y elegancia
+        de nuestra celebración, agradecemos evitar
+        zapatillas deportivas o de colores llamativos,
+        así como vestidos en tonos neón
+        o excesivamente vibrantes.
+      </p>
+
+    </div>
 
   </div>
 
@@ -510,22 +970,62 @@ footer p{
 
 <section>
 
+  <div class="section-label">
+    Recuerdos
+  </div>
+
   <h2 class="section-title">
     Nuestros momentos
   </h2>
 
-  <p class="subtitle">
+  <p class="section-text">
     Algunas fotografías de nuestra historia.
   </p>
 
   <div class="gallery">
 
-    <img src="fotos/foto1.jpg" alt="Bill y Rebeca">
     <img src="fotos/foto2.jpg" alt="Bill y Rebeca">
+
     <img src="fotos/foto3.jpg" alt="Bill y Rebeca">
+
     <img src="fotos/foto4.jpg" alt="Bill y Rebeca">
 
+    <img src="fotos/foto5.jpg" alt="Bill y Rebeca">
+
+    <img src="fotos/foto6.jpg" alt="Bill y Rebeca">
+
   </div>
+
+</section>
+
+
+<!-- MUSICA -->
+
+<section class="music">
+
+  <div class="section-label">
+    Nuestra canción
+  </div>
+
+  <h2 class="section-title">
+    Un momento para recordar
+  </h2>
+
+  <p>
+    Puedes añadir aquí una canción especial
+    para acompañar nuestra historia.
+  </p>
+
+  <audio id="music" src="musica/cancion.mp3"></audio>
+
+  <button
+    class="music-button"
+    onclick="toggleMusic()"
+    id="musicButton">
+
+    ♫ ESCUCHAR NUESTRA CANCIÓN
+
+  </button>
 
 </section>
 
@@ -534,27 +1034,28 @@ footer p{
 
 <section class="confirm">
 
-  <div class="confirm-box">
+  <div class="confirm-text">
+
+    <div class="section-label">
+      Tu presencia es importante
+    </div>
 
     <h2 class="section-title">
       ¿Nos acompañas?
     </h2>
 
     <p>
-      Para nosotros será muy especial
-      contar con tu presencia.
-    </p>
-
-    <p>
-      Por favor confirma tu asistencia
-      con anticipación.
+      Para nosotros será un honor contar contigo
+      en este día tan especial.
     </p>
 
     <a
-      class="whatsapp-button"
+      class="whatsapp"
       href="https://wa.me/51921788307?text=Hola%20Bill%20y%20Rebeca%2C%20quiero%20confirmar%20mi%20asistencia%20a%20su%20boda."
       target="_blank">
+
       CONFIRMAR ASISTENCIA
+
     </a>
 
   </div>
@@ -583,18 +1084,31 @@ footer p{
 </footer>
 
 
-<!-- CUENTA REGRESIVA -->
-
 <script>
+
+/* ABRIR INVITACIÓN */
+
+function openInvitation(){
+
+  document
+    .getElementById("envelope")
+    .classList.add("hide");
+
+}
+
+
+/* CUENTA REGRESIVA */
 
 const weddingDate =
 new Date("September 21, 2026 16:00:00").getTime();
 
 function updateCountdown(){
 
-  const now = new Date().getTime();
+  const now =
+  new Date().getTime();
 
-  const distance = weddingDate - now;
+  const distance =
+  weddingDate - now;
 
   if(distance <= 0){
 
@@ -607,28 +1121,74 @@ function updateCountdown(){
   }
 
   const days =
-  Math.floor(distance / (1000 * 60 * 60 * 24));
+  Math.floor(
+    distance /
+    (1000 * 60 * 60 * 24)
+  );
 
   const hours =
-  Math.floor((distance % (1000 * 60 * 60 * 24))
-  / (1000 * 60 * 60));
+  Math.floor(
+    (distance %
+    (1000 * 60 * 60 * 24)) /
+    (1000 * 60 * 60)
+  );
 
   const minutes =
-  Math.floor((distance % (1000 * 60 * 60))
-  / (1000 * 60));
+  Math.floor(
+    (distance %
+    (1000 * 60 * 60)) /
+    (1000 * 60)
+  );
 
   const seconds =
-  Math.floor((distance % (1000 * 60)) / 1000);
+  Math.floor(
+    (distance %
+    (1000 * 60)) /
+    1000
+  );
 
   document.getElementById("days").innerText = days;
   document.getElementById("hours").innerText = hours;
   document.getElementById("minutes").innerText = minutes;
   document.getElementById("seconds").innerText = seconds;
+
 }
 
 updateCountdown();
 
-setInterval(updateCountdown,1000);
+setInterval(
+  updateCountdown,
+  1000
+);
+
+
+/* MUSICA */
+
+function toggleMusic(){
+
+  const music =
+  document.getElementById("music");
+
+  const button =
+  document.getElementById("musicButton");
+
+  if(music.paused){
+
+    music.play();
+
+    button.innerText =
+      "Ⅱ PAUSAR NUESTRA CANCIÓN";
+
+  }else{
+
+    music.pause();
+
+    button.innerText =
+      "♫ ESCUCHAR NUESTRA CANCIÓN";
+
+  }
+
+}
 
 </script>
 
