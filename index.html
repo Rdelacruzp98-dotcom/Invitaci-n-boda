@@ -1278,14 +1278,30 @@ footer p{letter-spacing:4px}
 <script>
 
 /* SOBRE */
-
 function openInvitation(){
 
   document
     .getElementById("envelope")
     .classList.add("hide");
 
+  const music = document.getElementById("music");
+
+  music.volume = 0.7;
+
+  music.play().then(() => {
+
+    document.getElementById("musicButton").innerText =
+    "Ⅱ PAUSAR NUESTRA CANCIÓN";
+
+  }).catch(() => {
+
+    document.getElementById("musicButton").innerText =
+    "♫ ESCUCHAR NUESTRA CANCIÓN";
+
+  });
+
 }
+
 
 
 /* CONTADOR */
