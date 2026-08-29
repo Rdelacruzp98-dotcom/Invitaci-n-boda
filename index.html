@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Bill & Rebeca | Nuestra Boda</title>
 
 <style>
-
 :root{
   --cream:#f8f1e6;
   --cream2:#eee2d1;
@@ -37,29 +35,25 @@ body{
   overflow-x:hidden;
 }
 
-
-/* =========================
-   DETALLES FLORALES
-========================= */
+/* FLORES DECORATIVAS */
 
 .botanical{
   position:absolute;
   width:150px;
   height:190px;
-  opacity:.38;
+  opacity:.42;
   pointer-events:none;
 }
 
 .botanical.left{
   left:-20px;
   top:20px;
-  transform:rotate(-8deg);
 }
 
 .botanical.right{
   right:-20px;
   bottom:20px;
-  transform:scaleX(-1) rotate(-8deg);
+  transform:scaleX(-1);
 }
 
 .branch{
@@ -81,35 +75,11 @@ body{
   border-radius:100% 0 100% 0;
 }
 
-.leaf.l1{
-  left:45px;
-  top:45px;
-  transform:rotate(-30deg);
-}
-
-.leaf.l2{
-  left:80px;
-  top:70px;
-  transform:rotate(25deg);
-}
-
-.leaf.l3{
-  left:35px;
-  top:92px;
-  transform:rotate(-25deg);
-}
-
-.leaf.l4{
-  left:85px;
-  top:115px;
-  transform:rotate(25deg);
-}
-
-.leaf.l5{
-  left:52px;
-  top:135px;
-  transform:rotate(-20deg);
-}
+.leaf.l1{left:45px;top:45px;transform:rotate(-30deg);}
+.leaf.l2{left:80px;top:70px;transform:rotate(25deg);}
+.leaf.l3{left:35px;top:92px;transform:rotate(-25deg);}
+.leaf.l4{left:85px;top:115px;transform:rotate(25deg);}
+.leaf.l5{left:52px;top:135px;transform:rotate(-20deg);}
 
 .flower{
   position:absolute;
@@ -117,12 +87,11 @@ body{
   height:35px;
   border-radius:50%;
   background:var(--blue2);
-
   box-shadow:
-    0 -12px 0 var(--blue2),
-    12px 0 0 var(--blue2),
-    0 12px 0 var(--blue2),
-    -12px 0 0 var(--blue2);
+  0 -12px 0 var(--blue2),
+  12px 0 0 var(--blue2),
+  0 12px 0 var(--blue2),
+  -12px 0 0 var(--blue2);
 }
 
 .flower:after{
@@ -136,57 +105,25 @@ body{
   left:12px;
 }
 
-.flower.f1{
-  top:25px;
-  left:65px;
-  transform:scale(.65);
-}
+.flower.f1{top:25px;left:65px;transform:scale(.65);}
+.flower.f2{top:95px;left:105px;transform:scale(.5);}
+.flower.f3{top:130px;left:35px;transform:scale(.45);}
 
-.flower.f2{
-  top:95px;
-  left:105px;
-  transform:scale(.5);
-}
-
-.flower.f3{
-  top:130px;
-  left:35px;
-  transform:scale(.45);
-}
-
-
-/* =========================
-   SOBRE
-========================= */
+/* SOBRE */
 
 .envelope{
   position:fixed;
   inset:0;
   z-index:9999;
-
   background:
-    radial-gradient(
-      circle at 15% 15%,
-      rgba(185,209,216,.5),
-      transparent 25%
-    ),
-
-    radial-gradient(
-      circle at 85% 85%,
-      rgba(185,209,216,.5),
-      transparent 25%
-    ),
-
-    var(--cream);
-
+  radial-gradient(circle at 15% 15%,rgba(185,209,216,.5),transparent 25%),
+  radial-gradient(circle at 85% 85%,rgba(185,209,216,.5),transparent 25%),
+  var(--cream);
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
-
-  transition:
-    opacity 1s ease,
-    visibility 1s ease;
+  transition:opacity 1s ease,visibility 1s ease;
 }
 
 .envelope.hide{
@@ -197,20 +134,11 @@ body{
 .envelope-box{
   width:90%;
   max-width:520px;
-
   padding:60px 30px;
-
-  background:rgba(255,253,248,.75);
-
-  border:
-    1px solid
-    rgba(89,74,65,.25);
-
+  background:rgba(255,253,248,.85);
+  border:1px solid rgba(89,74,65,.25);
   position:relative;
-
-  box-shadow:
-    0 20px 60px
-    rgba(89,74,65,.12);
+  box-shadow:0 20px 60px rgba(89,74,65,.15);
 }
 
 .envelope-small{
@@ -234,389 +162,223 @@ body{
 
 .open-button{
   border:0;
-
   background:var(--blueDark);
   color:white;
-
   padding:15px 34px;
-
   border-radius:40px;
-
   letter-spacing:2px;
   font-size:11px;
-
   cursor:pointer;
 }
 
-
-/* =========================
-   PORTADA
-========================= */
+/* PORTADA */
 
 .hero{
   min-height:100vh;
-
   position:relative;
-
   display:flex;
-
   justify-content:center;
   align-items:center;
-
   text-align:center;
-
   background:
-
-    linear-gradient(
-      rgba(185,209,216,.58),
-      rgba(248,241,230,.72)
-    ),
-
-    url("fotos/portada.jpg")
-    center/cover
-    no-repeat;
-}
-
-.hero:before,
-.hero:after{
-  content:"";
-
-  position:absolute;
-
-  width:180px;
-  height:180px;
-
-  border-radius:50%;
-
-  background:
-    rgba(255,253,248,.25);
-
-  filter:blur(10px);
-}
-
-.hero:before{
-  top:8%;
-  left:5%;
-}
-
-.hero:after{
-  bottom:8%;
-  right:5%;
+  linear-gradient(
+  rgba(185,209,216,.58),
+  rgba(248,241,230,.72)
+  ),
+  url("fotos/portada.jpg") center/cover no-repeat;
 }
 
 .hero-inner{
   position:relative;
   z-index:2;
-
   padding:40px 25px;
-
   max-width:800px;
 }
 
 .hero-small{
   font-size:11px;
-
   letter-spacing:7px;
-
   text-transform:uppercase;
-
   margin-bottom:25px;
 }
 
 .hero h1{
   font-size:74px;
-
   font-weight:normal;
-
   letter-spacing:4px;
 }
 
 .hero-date{
   font-size:18px;
-
   letter-spacing:8px;
-
   margin-top:15px;
 }
 
 .hero-line{
   width:80px;
-
   height:1px;
-
   background:var(--brown);
-
   margin:30px auto;
 }
 
 .hero-verse{
   font-size:17px;
-
   font-style:italic;
 }
 
 .discover{
   display:inline-block;
-
   margin-top:50px;
-
   color:var(--brown);
-
   text-decoration:none;
-
   letter-spacing:3px;
-
   font-size:10px;
-
   text-transform:uppercase;
 }
 
-
-/* =========================
-   SECCIONES
-========================= */
+/* SECCIONES */
 
 section{
   position:relative;
-
   max-width:1000px;
-
   margin:auto;
-
   padding:100px 25px;
 }
 
 .section-label{
   text-align:center;
-
   color:var(--blueDark);
-
   font-size:10px;
-
   letter-spacing:4px;
-
   text-transform:uppercase;
-
   margin-bottom:15px;
 }
 
 .section-title{
   text-align:center;
-
   font-size:40px;
-
   font-weight:normal;
-
   margin-bottom:25px;
 }
 
 .section-text{
   max-width:680px;
-
   margin:auto;
-
   text-align:center;
-
   font-size:18px;
-
   line-height:1.9;
 }
 
-
-/* =========================
-   HISTORIA
-========================= */
+/* HISTORIA */
 
 .photo-large{
   max-width:700px;
-
   margin:55px auto 0;
 }
 
 .photo-large img{
   display:block;
-
   width:100%;
-
   max-height:650px;
-
   object-fit:cover;
-
   border-radius:4px;
-
-  box-shadow:
-    0 18px 45px
-    rgba(89,74,65,.13);
+  box-shadow:0 18px 45px rgba(89,74,65,.13);
 }
 
 .photo-caption{
   text-align:center;
-
   margin-top:15px;
-
   font-style:italic;
-
   color:var(--brown2);
 }
 
-
-/* =========================
-   FRASE
-========================= */
+/* FRASE */
 
 .quote{
   max-width:none;
-
   background:
-
-    radial-gradient(
-      circle at 15% 20%,
-      rgba(255,255,255,.5),
-      transparent 20%
-    ),
-
-    radial-gradient(
-      circle at 85% 80%,
-      rgba(255,255,255,.5),
-      transparent 20%
-    ),
-
-    var(--blue);
-
+  radial-gradient(circle at 15% 20%,rgba(255,255,255,.5),transparent 20%),
+  radial-gradient(circle at 85% 80%,rgba(255,255,255,.5),transparent 20%),
+  var(--blue);
   text-align:center;
 }
 
 .quote p{
   max-width:700px;
-
   margin:auto;
-
   font-size:28px;
-
   font-style:italic;
-
   line-height:1.6;
 }
 
 .quote small{
   display:block;
-
   margin-top:25px;
-
   letter-spacing:4px;
 }
 
-
-/* =========================
-   FE
-========================= */
-
-.faith{
-  background:var(--white);
-}
-
-
-/* =========================
-   CONTADOR
-========================= */
+/* CONTADOR */
 
 .countdown-section{
   max-width:none;
-
   text-align:center;
-
   background:var(--cream2);
 }
 
 .countdown{
   display:flex;
-
   justify-content:center;
-
   gap:15px;
-
   flex-wrap:wrap;
-
   margin-top:40px;
 }
 
 .time{
   min-width:90px;
-
   background:var(--white);
-
   padding:20px 12px;
-
-  box-shadow:
-    0 8px 25px
-    rgba(89,74,65,.08);
+  box-shadow:0 8px 25px rgba(89,74,65,.08);
 }
 
 .time span{
   display:block;
-
   font-size:34px;
-
   color:var(--blueDark);
 }
 
 .time small{
   font-family:Arial,sans-serif;
-
   text-transform:uppercase;
-
   letter-spacing:2px;
-
   font-size:9px;
 }
 
-
-/* =========================
-   EVENTOS
-========================= */
+/* EVENTOS */
 
 .events{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:25px;
-
   margin-top:45px;
 }
 
 .event{
-  position:relative;
-
   background:var(--white);
-
   padding:50px 25px;
-
   text-align:center;
-
-  border:
-    1px solid
-    rgba(89,74,65,.12);
-
-  box-shadow:
-    0 12px 35px
-    rgba(89,74,65,.07);
+  border:1px solid rgba(89,74,65,.12);
+  box-shadow:0 12px 35px rgba(89,74,65,.07);
 }
 
 .event-icon{
   font-size:29px;
-
   margin-bottom:15px;
 }
 
 .event h3{
   font-size:27px;
-
   font-weight:normal;
-
   color:var(--blueDark);
-
   margin-bottom:15px;
 }
 
@@ -626,54 +388,34 @@ section{
 
 .map{
   display:inline-block;
-
   margin-top:20px;
-
   padding:12px 25px;
-
   border-radius:30px;
-
   background:var(--blueDark);
-
   color:white;
-
   text-decoration:none;
-
   font-family:Arial,sans-serif;
-
   font-size:10px;
-
   letter-spacing:2px;
 }
 
-
-/* =========================
-   CRONOGRAMA
-========================= */
+/* CRONOGRAMA */
 
 .timeline{
   max-width:620px;
-
   margin:45px auto 0;
 }
 
 .timeline-item{
   display:flex;
-
   gap:25px;
-
   padding:25px 0;
-
-  border-bottom:
-    1px solid
-    rgba(89,74,65,.15);
+  border-bottom:1px solid rgba(89,74,65,.15);
 }
 
 .timeline-time{
   min-width:85px;
-
   color:var(--blueDark);
-
   font-size:17px;
 }
 
@@ -683,303 +425,214 @@ section{
 
 .timeline-text strong{
   display:block;
-
   font-size:19px;
 }
 
-
-/* =========================
-   VESTIMENTA
-========================= */
+/* VESTIMENTA */
 
 .dress{
   max-width:none;
-
   background:
-
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(255,255,255,.5),
-      transparent 18%
-    ),
-
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(255,255,255,.5),
-      transparent 18%
-    ),
-
-    var(--blue2);
-
+  radial-gradient(circle at 10% 20%,rgba(255,255,255,.5),transparent 18%),
+  radial-gradient(circle at 90% 80%,rgba(255,255,255,.5),transparent 18%),
+  var(--blue2);
   text-align:center;
 }
 
 .dress-box{
   max-width:760px;
-
   margin:auto;
-
-  background:
-    rgba(255,253,248,.75);
-
+  background:rgba(255,253,248,.75);
   padding:55px 30px;
-
-  box-shadow:
-    0 15px 45px
-    rgba(89,74,65,.08);
+  box-shadow:0 15px 45px rgba(89,74,65,.08);
 }
 
 .dress-main{
   font-size:32px;
-
   color:var(--blueDark);
-
   letter-spacing:3px;
-
   margin-bottom:25px;
 }
 
 .dress-columns{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:25px;
-
   margin:30px 0;
 }
 
 .dress-card{
   background:var(--cream);
-
   padding:25px;
 }
 
 .dress-card h3{
   font-weight:normal;
-
   margin-bottom:10px;
 }
 
 .avoid{
   padding-top:25px;
-
-  border-top:
-    1px solid
-    rgba(89,74,65,.15);
+  border-top:1px solid rgba(89,74,65,.15);
 }
 
-
-/* =========================
-   GALERIA
-========================= */
+/* GALERIA */
 
 .gallery{
   display:grid;
-
-  grid-template-columns:
-    2fr 1fr;
-
+  grid-template-columns:2fr 1fr;
   gap:12px;
-
   margin-top:45px;
 }
 
 .gallery img{
   width:100%;
-
   height:270px;
-
   object-fit:cover;
 }
 
 .gallery img:first-child{
   height:552px;
-
   grid-row:span 2;
 }
 
-
-/* =========================
-   MUSICA
-========================= */
+/* MUSICA */
 
 .music{
   max-width:none;
-
   text-align:center;
-
   background:var(--cream2);
 }
 
 .music-button{
   border:0;
-
   background:var(--blueDark);
-
   color:white;
-
   padding:14px 30px;
-
   border-radius:30px;
-
   margin-top:25px;
-
   cursor:pointer;
-
   letter-spacing:2px;
-
   font-size:10px;
 }
 
-
-/* =========================
-   LISTA DE REGALOS
-========================= */
+/* MESA DE REGALOS */
 
 .gifts{
-  background:var(--white);
-
+  max-width:none;
   text-align:center;
+  background:
+  radial-gradient(circle at 15% 20%,rgba(255,255,255,.55),transparent 20%),
+  radial-gradient(circle at 85% 80%,rgba(255,255,255,.55),transparent 20%),
+  var(--blue2);
 }
 
-.gift-intro{
-  max-width:650px;
-
-  margin:auto;
-
-  font-size:17px;
-
-  line-height:1.9;
-}
-
-.gift-box{
+.gifts-box{
   max-width:760px;
-
-  margin:45px auto 0;
-
-  padding:45px 30px;
-
-  background:var(--cream2);
-
-  border:
-    1px solid
-    rgba(89,74,65,.12);
-
-  box-shadow:
-    0 12px 35px
-    rgba(89,74,65,.07);
-}
-
-.gift-box h3{
-  font-size:27px;
-
-  font-weight:normal;
-
-  color:var(--blueDark);
-
-  margin-bottom:25px;
-}
-
-.gift-list{
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:12px;
-
-  text-align:left;
-
-  max-width:600px;
-
   margin:auto;
+  background:rgba(255,253,248,.88);
+  padding:55px 30px;
+  box-shadow:0 15px 45px rgba(89,74,65,.09);
 }
 
-.gift-item{
+.gift-options{
+  display:grid;
+  gap:15px;
+  margin-top:35px;
+}
+
+.gift-card{
+  background:var(--cream);
+  padding:25px;
+  text-align:left;
+  border:1px solid rgba(89,74,65,.10);
+}
+
+.gift-card h3{
+  color:var(--blueDark);
+  font-size:20px;
+  font-weight:normal;
+  margin-bottom:7px;
+}
+
+.gift-details{
+  display:none;
+  margin-top:20px;
+  padding:20px;
   background:var(--white);
-
-  padding:15px 18px;
-
-  border-radius:4px;
-
-  font-size:15px;
+  border-left:3px solid var(--blueDark);
+  line-height:2;
 }
 
-.gift-note{
+.gift-details.show{
+  display:block;
+}
+
+.gift-button{
+  border:0;
+  background:var(--blueDark);
+  color:white;
+  padding:15px 28px;
+  border-radius:30px;
   margin-top:30px;
-
-  font-style:italic;
-
-  color:var(--brown2);
+  cursor:pointer;
+  letter-spacing:2px;
+  font-size:10px;
 }
 
+.copy-button{
+  display:inline-block;
+  margin-top:10px;
+  border:1px solid var(--blueDark);
+  background:transparent;
+  color:var(--blueDark);
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:9px;
+  letter-spacing:1px;
+}
 
-/* =========================
-   CONFIRMACION
-========================= */
+/* CONFIRMACION */
 
 .confirm{
   max-width:none;
-
   text-align:center;
-
   background:var(--blue);
 }
 
 .confirm-text{
   max-width:650px;
-
   margin:auto;
 }
 
 .whatsapp{
   display:inline-block;
-
   margin-top:30px;
-
   padding:16px 35px;
-
   border-radius:35px;
-
   background:var(--brown);
-
   color:white;
-
   text-decoration:none;
-
   font-family:Arial,sans-serif;
-
   letter-spacing:2px;
-
   font-size:10px;
 }
 
-
-/* =========================
-   FINAL
-========================= */
+/* FINAL */
 
 footer{
   position:relative;
-
   overflow:hidden;
-
   background:var(--brown);
-
   color:var(--cream);
-
   text-align:center;
-
   padding:95px 20px;
 }
 
 footer h2{
   font-size:50px;
-
   font-weight:normal;
-
   margin-bottom:15px;
 }
 
@@ -987,10 +640,7 @@ footer p{
   letter-spacing:4px;
 }
 
-
-/* =========================
-   MOVIL
-========================= */
+/* MOVIL */
 
 @media(max-width:700px){
 
@@ -1029,12 +679,7 @@ footer p{
   .gallery img,
   .gallery img:first-child{
     height:320px;
-
     grid-row:auto;
-  }
-
-  .gift-list{
-    grid-template-columns:1fr;
   }
 
   .envelope h1{
@@ -1042,149 +687,73 @@ footer p{
   }
 
 }
-
-
-/* =========================
-   ANIMACION SUAVE
-========================= */
-
-@keyframes fadeIn{
-
-  from{
-    opacity:0;
-    transform:translateY(15px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
-.hero-inner{
-  animation:
-    fadeIn 1.5s ease;
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     SOBRE
-========================= -->
+<!-- SOBRE -->
 
 <div class="envelope" id="envelope">
 
   <div class="envelope-box">
 
     <div class="botanical botanical left">
-
       <div class="branch"></div>
-
       <div class="leaf l1"></div>
       <div class="leaf l2"></div>
       <div class="leaf l3"></div>
       <div class="leaf l4"></div>
-
       <div class="flower f1"></div>
       <div class="flower f2"></div>
-
     </div>
-
 
     <div class="envelope-small">
-
       Una invitación especial
-
     </div>
 
-
-    <h1>
-
-      Bill & Rebeca
-
-    </h1>
-
+    <h1>Bill & Rebeca</h1>
 
     <p>
-
       Tenemos el honor de invitarte
       a celebrar nuestro gran día.
-
     </p>
 
-
-    <button
-      class="open-button"
-      onclick="openInvitation()">
-
+    <button class="open-button" onclick="openInvitation()">
       ABRIR INVITACIÓN
-
     </button>
 
-
   </div>
-
 </div>
 
 
-
-<!-- =========================
-     PORTADA
-========================= -->
+<!-- PORTADA -->
 
 <header class="hero">
 
   <div class="hero-inner">
 
     <div class="hero-small">
-
       Nuestra boda
-
     </div>
 
-
-    <h1>
-
-      Bill & Rebeca
-
-    </h1>
-
+    <h1>Bill & Rebeca</h1>
 
     <div class="hero-date">
-
       21 · 09 · 2026
-
     </div>
-
 
     <div class="hero-line"></div>
 
-
     <div class="hero-verse">
-
       “Lo que Dios ha unido,
       no lo separe el hombre.”
-
       <br>
-
       Mateo 19:6
-
     </div>
 
-
-    <a
-      class="discover"
-      href="#historia">
-
+    <a class="discover" href="#historia">
       Descubre nuestra historia ↓
-
     </a>
 
   </div>
@@ -1192,116 +761,74 @@ footer p{
 </header>
 
 
-
-<!-- =========================
-     HISTORIA
-========================= -->
+<!-- HISTORIA -->
 
 <section id="historia">
 
   <div class="botanical botanical left">
-
     <div class="branch"></div>
-
     <div class="leaf l1"></div>
     <div class="leaf l2"></div>
     <div class="leaf l3"></div>
     <div class="leaf l4"></div>
-
+    <div class="leaf l5"></div>
     <div class="flower f1"></div>
     <div class="flower f2"></div>
     <div class="flower f3"></div>
-
   </div>
-
 
   <div class="section-label">
-
     Nuestra historia
-
   </div>
 
-
   <h2 class="section-title">
-
     Un amor escrito por Dios
-
   </h2>
 
-
   <p class="section-text">
-
     Con mucha alegría queremos compartir contigo
     uno de los días más importantes de nuestras vidas.
-
     Dios nos permitió encontrarnos y hoy damos un nuevo
     paso juntos, poniendo nuestra historia en Sus manos.
-
   </p>
 
-
   <div class="photo-large">
-
-    <img
-      src="fotos/foto1.jpg"
-      alt="Bill y Rebeca">
-
-
+    <img src="fotos/foto1.jpg" alt="Bill y Rebeca">
     <div class="photo-caption">
-
       Nuestra historia comienza aquí...
-
     </div>
-
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     FRASE
-========================= -->
+<!-- FRASE -->
 
 <section class="quote">
 
   <p>
-
     “Dos historias, un camino,
     una promesa y Dios en el centro de todo.”
-
   </p>
 
-
   <small>
-
     BILL & REBECA
-
   </small>
 
 </section>
 
 
+<!-- FE -->
 
-<!-- =========================
-     FE
-========================= -->
-
-<section class="faith">
+<section>
 
   <div class="section-label">
-
     Nuestra fe
-
   </div>
 
-
   <h2 class="section-title">
-
     Dios en nuestra historia
-
   </h2>
-
 
   <p class="section-text">
 
@@ -1309,11 +836,7 @@ footer p{
 
     <br><br>
 
-    <strong>
-
-      Eclesiastés 4:12
-
-    </strong>
+    <strong>Eclesiastés 4:12</strong>
 
     <br><br>
 
@@ -1327,276 +850,137 @@ footer p{
 </section>
 
 
-
-<!-- =========================
-     CONTADOR
-========================= -->
+<!-- CONTADOR -->
 
 <section class="countdown-section">
 
   <div class="section-label">
-
     Nuestro gran día
-
   </div>
 
-
   <h2 class="section-title">
-
     Falta muy poco
-
   </h2>
 
-
   <p>
-
     para celebrar juntos este momento.
-
   </p>
-
 
   <div class="countdown">
 
-
     <div class="time">
-
-      <span id="days">
-
-        0
-
-      </span>
-
-      <small>
-
-        Días
-
-      </small>
-
+      <span id="days">0</span>
+      <small>Días</small>
     </div>
 
-
     <div class="time">
-
-      <span id="hours">
-
-        0
-
-      </span>
-
-      <small>
-
-        Horas
-
-      </small>
-
+      <span id="hours">0</span>
+      <small>Horas</small>
     </div>
 
-
     <div class="time">
-
-      <span id="minutes">
-
-        0
-
-      </span>
-
-      <small>
-
-        Minutos
-
-      </small>
-
+      <span id="minutes">0</span>
+      <small>Minutos</small>
     </div>
 
-
     <div class="time">
-
-      <span id="seconds">
-
-        0
-
-      </span>
-
-      <small>
-
-        Segundos
-
-      </small>
-
+      <span id="seconds">0</span>
+      <small>Segundos</small>
     </div>
-
 
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     EVENTOS
-========================= -->
+<!-- EVENTOS -->
 
 <section>
 
   <div class="section-label">
-
     21 · 09 · 2026
-
   </div>
 
-
   <h2 class="section-title">
-
     Nuestro gran día
-
   </h2>
 
-
   <p class="section-text">
-
     Queremos que seas parte de esta celebración
     tan especial.
-
   </p>
-
 
   <div class="events">
 
-
     <div class="event">
 
-      <div class="event-icon">
+      <div class="event-icon">✝️</div>
 
-        ✝️
-
-      </div>
-
-
-      <h3>
-
-        Ceremonia religiosa
-
-      </h3>
-
+      <h3>Ceremonia religiosa</h3>
 
       <p>
-
-        <strong>
-
-          4:00 p. m.
-
-        </strong>
-
+        <strong>4:00 p. m.</strong>
         <br><br>
-
         Jirón Coronel Zubiaga 187
-
         <br>
-
         Cercado de Lima
-
       </p>
-
 
       <a
         class="map"
         href="https://www.google.com/maps/search/?api=1&query=Jir%C3%B3n+Coronel+Zubiaga+187+Cercado+de+Lima"
         target="_blank">
-
         VER UBICACIÓN
-
       </a>
 
     </div>
 
-
-
     <div class="event">
 
-      <div class="event-icon">
+      <div class="event-icon">🥂</div>
 
-        🥂
-
-      </div>
-
-
-      <h3>
-
-        Recepción
-
-      </h3>
-
+      <h3>Recepción</h3>
 
       <p>
-
         Al finalizar la ceremonia
-
         <br><br>
-
-        <strong>
-
-          En el mismo lugar
-
-        </strong>
-
+        <strong>En el mismo lugar</strong>
         <br><br>
-
         Jirón Coronel Zubiaga 187
-
         <br>
-
         Cercado de Lima
-
       </p>
 
     </div>
-
 
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     CRONOGRAMA
-========================= -->
+<!-- CRONOGRAMA -->
 
 <section>
 
   <div class="section-label">
-
     Celebremos juntos
-
   </div>
 
-
   <h2 class="section-title">
-
     Así será nuestro día
-
   </h2>
 
-
   <div class="timeline">
-
 
     <div class="timeline-item">
 
       <div class="timeline-time">
-
         4:00 p. m.
-
       </div>
-
 
       <div class="timeline-text">
 
-        <strong>
-
-          Ceremonia religiosa
-
-        </strong>
+        <strong>Ceremonia religiosa</strong>
 
         Un momento para celebrar
         nuestra unión delante de Dios.
@@ -1605,24 +989,15 @@ footer p{
 
     </div>
 
-
-
     <div class="timeline-item">
 
       <div class="timeline-time">
-
         Después
-
       </div>
-
 
       <div class="timeline-text">
 
-        <strong>
-
-          Recepción
-
-        </strong>
+        <strong>Recepción</strong>
 
         Compartiremos juntos
         comida, alegría y buenos momentos.
@@ -1631,24 +1006,15 @@ footer p{
 
     </div>
 
-
-
     <div class="timeline-item">
 
       <div class="timeline-time">
-
         ❤️
-
       </div>
-
 
       <div class="timeline-text">
 
-        <strong>
-
-          Celebramos nuestro amor
-
-        </strong>
+        <strong>Celebramos nuestro amor</strong>
 
         Queremos disfrutar este día
         junto a las personas que amamos.
@@ -1657,204 +1023,123 @@ footer p{
 
     </div>
 
-
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     VESTIMENTA
-========================= -->
+<!-- VESTIMENTA -->
 
 <section class="dress">
 
   <div class="dress-box">
 
-
     <div class="section-label">
-
       Dress code
-
     </div>
-
 
     <h2 class="section-title">
-
       Código de vestimenta
-
     </h2>
 
-
     <div class="dress-main">
-
       FORMAL
-
     </div>
-
 
     <div class="dress-columns">
 
-
       <div class="dress-card">
 
-        <h3>
-
-          🤵 Caballeros
-
-        </h3>
-
+        <h3>🤵 Caballeros</h3>
 
         <p>
-
           Traje o vestimenta formal
           y zapatos de vestir.
-
         </p>
 
       </div>
-
-
 
       <div class="dress-card">
 
-        <h3>
-
-          👗 Damas
-
-        </h3>
-
+        <h3>👗 Damas</h3>
 
         <p>
-
           Vestido elegante
           y acorde a la ocasión.
-
         </p>
 
       </div>
 
-
     </div>
-
 
     <div class="avoid">
 
       <strong>
-
         Una pequeña consideración
-
       </strong>
 
-
       <p>
-
         Para mantener la armonía y elegancia
         de nuestra celebración, agradecemos evitar
         zapatillas deportivas o de colores llamativos,
         así como vestidos en tonos neón
         o excesivamente vibrantes.
-
       </p>
 
     </div>
 
-
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     GALERIA
-========================= -->
+<!-- GALERIA -->
 
 <section>
 
   <div class="section-label">
-
     Recuerdos
-
   </div>
 
-
   <h2 class="section-title">
-
     Nuestros momentos
-
   </h2>
 
-
   <p class="section-text">
-
     Algunas fotografías de nuestra historia.
-
   </p>
-
 
   <div class="gallery">
 
-    <img
-      src="fotos/foto2.jpg"
-      alt="Bill y Rebeca">
-
-    <img
-      src="fotos/foto3.jpg"
-      alt="Bill y Rebeca">
-
-    <img
-      src="fotos/foto4.jpg"
-      alt="Bill y Rebeca">
-
-    <img
-      src="fotos/foto5.jpg"
-      alt="Bill y Rebeca">
-
-    <img
-      src="fotos/foto6.jpg"
-      alt="Bill y Rebeca">
+    <img src="fotos/foto2.jpg" alt="Bill y Rebeca">
+    <img src="fotos/foto3.jpg" alt="Bill y Rebeca">
+    <img src="fotos/foto4.jpg" alt="Bill y Rebeca">
+    <img src="fotos/foto5.jpg" alt="Bill y Rebeca">
+    <img src="fotos/foto6.jpg" alt="Bill y Rebeca">
 
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     MUSICA
-========================= -->
+<!-- MUSICA -->
 
 <section class="music">
 
   <div class="section-label">
-
     Nuestra canción
-
   </div>
 
-
   <h2 class="section-title">
-
     Un momento para recordar
-
   </h2>
 
-
   <p>
-
     Una canción especial para acompañar
     nuestra historia.
-
   </p>
 
-
-  <audio
-    id="music"
-    src="musica/cancion.mp3">
-  </audio>
-
+  <audio id="music" src="musica/cancion.mp3"></audio>
 
   <button
     class="music-button"
@@ -1865,196 +1150,130 @@ footer p{
 
   </button>
 
-
 </section>
 
 
-
-<!-- =========================
-     LISTA DE REGALOS
-========================= -->
+<!-- MESA DE REGALOS -->
 
 <section class="gifts">
 
-  <div class="section-label">
+  <div class="gifts-box">
 
-    Un detalle especial
+    <div class="section-label">
+      Mesa de regalos
+    </div>
 
-  </div>
+    <h2 class="section-title">
+      Tu presencia es nuestro mejor regalo
+    </h2>
 
+    <p class="section-text">
+      Si deseas tener un detalle con nosotros,
+      puedes elegir una de estas opciones.
+    </p>
 
-  <h2 class="section-title">
+    <div class="gift-options">
 
-    Lista de regalos
+      <div class="gift-card">
 
-  </h2>
+        <h3>🎁 Regalo en efectivo</h3>
 
-
-  <p class="gift-intro">
-
-    Si deseas acompañarnos con un detalle,
-    hemos preparado algunas opciones que
-    pueden ser útiles para nuestra nueva etapa.
-
-  </p>
-
-
-  <div class="gift-box">
-
-    <h3>
-
-      Para nuestro nuevo hogar
-
-    </h3>
-
-
-    <div class="gift-list">
-
-
-      <div class="gift-item">
-
-        🍽️ Vajilla
+        <p>
+          Para ayudarnos a comenzar
+          esta nueva etapa juntos.
+        </p>
 
       </div>
 
+      <div class="gift-card">
 
-      <div class="gift-item">
+        <h3>🏦 Transferencia bancaria</h3>
 
-        🥄 Cubiertos
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🍳 Ollas y sartenes
+        <p>
+          Puedes realizar una transferencia
+          a nuestra cuenta de Interbank.
+        </p>
 
       </div>
 
+      <div class="gift-card">
 
-      <div class="gift-item">
+        <h3>💌 Sobre de regalo</h3>
 
-        🔪 Juego de cuchillos
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🥣 Bowls y recipientes
+        <p>
+          También puedes entregarlo personalmente
+          el día de nuestra boda.
+        </p>
 
       </div>
-
-
-      <div class="gift-item">
-
-        ☕ Tazas y vasos
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🍴 Utensilios de cocina
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🫖 Hervidor eléctrico
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🧹 Escoba y recogedor
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🧺 Canasta para ropa
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🧼 Artículos de limpieza
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🛁 Toallas
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🪟 Cortinas
-
-      </div>
-
-
-      <div class="gift-item">
-
-        🍴 Electrodomésticos pequeños
-
-      </div>
-
 
     </div>
 
+    <button
+      class="gift-button"
+      onclick="toggleGifts()"
+      id="giftButton">
 
-    <p class="gift-note">
+      VER DATOS PARA REGALO
 
-      Esta lista es únicamente una referencia
-      para quienes deseen elegir un detalle.
+    </button>
 
-    </p>
+    <div class="gift-details" id="giftDetails">
+
+      <strong>📱 Yape / Plin</strong>
+      <br>
+      921 788 307
+
+      <br><br>
+
+      <strong>🏦 Banco INTERBANK</strong>
+      <br><br>
+
+      <strong>Número de cuenta:</strong>
+      <br>
+      898-3511395463
+
+      <br><br>
+
+      <strong>CCI:</strong>
+      <br>
+      003-898-013511395463-44
+
+      <br><br>
+
+      <button
+        class="copy-button"
+        onclick="copyAccount()">
+
+        COPIAR CUENTA
+
+      </button>
+
+    </div>
 
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     CONFIRMACION
-========================= -->
+<!-- CONFIRMACION -->
 
 <section class="confirm">
 
   <div class="confirm-text">
 
-
     <div class="section-label">
-
       Tu presencia es importante
-
     </div>
 
-
     <h2 class="section-title">
-
       ¿Nos acompañas?
-
     </h2>
 
-
     <p>
-
       Para nosotros será un honor contar contigo
       en este día tan especial.
-
     </p>
-
 
     <a
       class="whatsapp"
@@ -2065,233 +1284,190 @@ footer p{
 
     </a>
 
-
   </div>
 
 </section>
 
 
-
-<!-- =========================
-     FINAL
-========================= -->
+<!-- FINAL -->
 
 <footer>
-
 
   <div class="botanical botanical right">
 
     <div class="branch"></div>
-
     <div class="leaf l1"></div>
     <div class="leaf l2"></div>
     <div class="leaf l3"></div>
     <div class="leaf l4"></div>
-
+    <div class="leaf l5"></div>
     <div class="flower f1"></div>
     <div class="flower f2"></div>
     <div class="flower f3"></div>
 
   </div>
 
-
   <h2>
-
     Bill & Rebeca
-
   </h2>
 
-
   <p>
-
     21 · 09 · 2026
-
   </p>
-
 
   <br>
 
-
   <p>
-
     Con amor y gratitud ❤️
-
   </p>
-
 
 </footer>
 
 
-
 <script>
 
-
-/* =========================
-   SOBRE
-========================= */
+/* SOBRE */
 
 function openInvitation(){
 
   document
-    .getElementById("envelope")
-    .classList.add("hide");
+  .getElementById("envelope")
+  .classList.add("hide");
 
 }
 
 
-
-/* =========================
-   CONTADOR
-========================= */
+/* CONTADOR */
 
 const weddingDate =
-new Date(
-  "September 21, 2026 16:00:00"
-).getTime();
-
+new Date("September 21, 2026 16:00:00").getTime();
 
 function updateCountdown(){
 
   const now =
-    new Date().getTime();
-
+  new Date().getTime();
 
   const distance =
-    weddingDate - now;
-
+  weddingDate - now;
 
   if(distance <= 0){
 
-    document
-      .getElementById("days")
-      .innerText = "0";
-
-    document
-      .getElementById("hours")
-      .innerText = "0";
-
-    document
-      .getElementById("minutes")
-      .innerText = "0";
-
-    document
-      .getElementById("seconds")
-      .innerText = "0";
+    document.getElementById("days").innerText = "0";
+    document.getElementById("hours").innerText = "0";
+    document.getElementById("minutes").innerText = "0";
+    document.getElementById("seconds").innerText = "0";
 
     return;
-
   }
 
-
   const days =
-    Math.floor(
-      distance /
-      (1000 * 60 * 60 * 24)
-    );
-
+  Math.floor(
+    distance /
+    (1000 * 60 * 60 * 24)
+  );
 
   const hours =
-    Math.floor(
-      (
-        distance %
-        (1000 * 60 * 60 * 24)
-      ) /
-      (1000 * 60 * 60)
-    );
-
+  Math.floor(
+    (distance %
+    (1000 * 60 * 60 * 24)) /
+    (1000 * 60 * 60)
+  );
 
   const minutes =
-    Math.floor(
-      (
-        distance %
-        (1000 * 60 * 60)
-      ) /
-      (1000 * 60)
-    );
-
+  Math.floor(
+    (distance %
+    (1000 * 60 * 60)) /
+    (1000 * 60)
+  );
 
   const seconds =
-    Math.floor(
-      (
-        distance %
-        (1000 * 60)
-      ) /
-      1000
-    );
+  Math.floor(
+    (distance %
+    (1000 * 60)) /
+    1000
+  );
 
-
-  document
-    .getElementById("days")
-    .innerText = days;
-
-
-  document
-    .getElementById("hours")
-    .innerText = hours;
-
-
-  document
-    .getElementById("minutes")
-    .innerText = minutes;
-
-
-  document
-    .getElementById("seconds")
-    .innerText = seconds;
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
 
 }
 
-
 updateCountdown();
 
-
-setInterval(
-  updateCountdown,
-  1000
-);
+setInterval(updateCountdown,1000);
 
 
-
-/* =========================
-   MUSICA
-========================= */
+/* MUSICA */
 
 function toggleMusic(){
 
   const music =
-    document.getElementById("music");
-
+  document.getElementById("music");
 
   const button =
-    document.getElementById("musicButton");
-
+  document.getElementById("musicButton");
 
   if(music.paused){
 
     music.play();
 
-
     button.innerText =
-      "Ⅱ PAUSAR NUESTRA CANCIÓN";
+    "Ⅱ PAUSAR NUESTRA CANCIÓN";
 
-  }
-
-  else{
+  }else{
 
     music.pause();
 
-
     button.innerText =
-      "♫ ESCUCHAR NUESTRA CANCIÓN";
+    "♫ ESCUCHAR NUESTRA CANCIÓN";
 
   }
 
 }
 
 
+/* MESA DE REGALOS */
+
+function toggleGifts(){
+
+  const details =
+  document.getElementById("giftDetails");
+
+  const button =
+  document.getElementById("giftButton");
+
+  if(details.classList.contains("show")){
+
+    details.classList.remove("show");
+
+    button.innerText =
+    "VER DATOS PARA REGALO";
+
+  }else{
+
+    details.classList.add("show");
+
+    button.innerText =
+    "OCULTAR DATOS";
+
+  }
+
+}
+
+
+/* COPIAR CUENTA */
+
+function copyAccount(){
+
+  navigator.clipboard.writeText("898-3511395463");
+
+  alert("Número de cuenta copiado.");
+
+}
+
 </script>
 
-
 </body>
-
 </html>
